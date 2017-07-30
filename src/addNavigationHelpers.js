@@ -14,7 +14,6 @@ import NavigationActions from './NavigationActions';
 
 export default function<S: *>(navigation: NavigationProp<S, NavigationAction>) {
   return {
-    ...navigation,
     goBack: (key?: ?string): boolean =>
       navigation.dispatch(
         NavigationActions.back({
@@ -45,5 +44,6 @@ export default function<S: *>(navigation: NavigationProp<S, NavigationAction>) {
           key: navigation.state.key,
         })
       ),
+    ...navigation,
   };
 }
